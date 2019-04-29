@@ -325,9 +325,14 @@ proxyCertInfo=critical,language:id-ppl-anyLanguage,pathlen:3,policy:foo
 [ tsa ]
 
 default_tsa = tsa_config1	# the default TSA section
+[ req_ext ]
+subjectAltName = @alt_names
+
 [alt_names]
 DNS.1= hashedin.com
-DNS.2= *.hashedin.com
+DNS.2= 1broker.hashedin.com
+DNS.3= 2broker.hashedin.com
+DNS.4= 3broker.hashedin.com
 [ tsa_config1 ]
 
 # These are used by the TSA reply generation only.
